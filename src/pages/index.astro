@@ -1,11 +1,470 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import CountdownTimer from '../components/CountdownTimer.tsx';
+import RSVPForm from '../components/RSVPForm.tsx';
+import PhotoGallery from '../components/PhotoGallery.tsx';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const weddingDate = new Date('2025-06-15T14:00:00');
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="John & Jane Wedding - June 15, 2025">
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
+    
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+      <div class="fade-in">
+        <h1 class="text-5xl md:text-7xl font-script font-bold mb-6">
+          John & Jane
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 font-light">
+          are getting married
+        </p>
+        <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+        <p class="text-lg md:text-xl mb-12">
+          Sunday, June 15, 2025 • 2:00 PM<br>
+          Sacred Heart Church
+        </p>
+      </div>
+      
+      <div class="fade-in mb-12">
+        <CountdownTimer targetDate={weddingDate} client:load />
+      </div>
+      
+      <div class="fade-in">
+        <a href="#rsvp" class="btn-primary text-lg px-10 py-4 inline-block">
+          RSVP Now
+        </a>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section id="story" class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+          Our Love Story
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Every love story is beautiful, but ours is our favorite. Here's how it all began.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16 fade-in">
+        <div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">How We Met</h3>
+          <p class="text-gray-600 leading-relaxed">
+            It was a rainy Tuesday in September 2020 when John and Jane first crossed paths at the local coffee shop. 
+            What started as a chance encounter over spilled coffee turned into hours of conversation and an instant connection. 
+            Little did they know that this moment would change their lives forever.
+          </p>
+        </div>
+        <div class="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
+          <span class="text-gray-500">Photo placeholder</span>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
+        <div class="md:order-2">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">The Proposal</h3>
+          <p class="text-gray-600 leading-relaxed">
+            After four wonderful years together, John knew Jane was the one. On a beautiful sunset evening at their favorite 
+            beach, surrounded by the sound of waves and the golden light of dusk, he got down on one knee and asked the 
+            most important question of his life. Of course, she said yes!
+          </p>
+        </div>
+        <div class="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
+          <span class="text-gray-500">Photo placeholder</span>
+        </div>
+      </div>
+      
+      <div class="mt-16 fade-in">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Our Journey</h3>
+        <div class="max-w-3xl mx-auto">
+          <div class="timeline-item fade-in">
+            <div class="flex items-center mb-2">
+              <h4 class="text-lg font-semibold text-gray-800">September 2020</h4>
+            </div>
+            <p class="text-gray-600">First met at Central Coffee Shop</p>
+          </div>
+          
+          <div class="timeline-item fade-in">
+            <div class="flex items-center mb-2">
+              <h4 class="text-lg font-semibold text-gray-800">December 2020</h4>
+            </div>
+            <p class="text-gray-600">First vacation together to the mountains</p>
+          </div>
+          
+          <div class="timeline-item fade-in">
+            <div class="flex items-center mb-2">
+              <h4 class="text-lg font-semibold text-gray-800">June 2022</h4>
+            </div>
+            <p class="text-gray-600">Moved in together</p>
+          </div>
+          
+          <div class="timeline-item fade-in">
+            <div class="flex items-center mb-2">
+              <h4 class="text-lg font-semibold text-gray-800">August 2024</h4>
+            </div>
+            <p class="text-gray-600">Got engaged at Sunset Beach</p>
+          </div>
+          
+          <div class="timeline-item fade-in">
+            <div class="flex items-center mb-2">
+              <h4 class="text-lg font-semibold text-gray-800">June 2025</h4>
+            </div>
+            <p class="text-gray-600">Our wedding day!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Details Section -->
+  <section id="details" class="section-padding bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+          Wedding Details
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          All the important information you need to celebrate with us.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Ceremony</h3>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-semibold text-gray-800">Date & Time</h4>
+              <p class="text-gray-600">Sunday, June 15, 2025 at 2:00 PM</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Venue</h4>
+              <p class="text-gray-600">Sacred Heart Church<br>123 Main Street<br>Anytown, ST 12345</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Dress Code</h4>
+              <p class="text-gray-600">Formal attire requested</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Reception</h3>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <h4 class="font-semibold text-gray-800">Date & Time</h4>
+              <p class="text-gray-600">Sunday, June 15, 2025 at 5:00 PM</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Venue</h4>
+              <p class="text-gray-600">Grand Ballroom Hotel<br>456 Oak Avenue<br>Anytown, ST 12345</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Dinner</h4>
+              <p class="text-gray-600">Plated dinner will be served</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Schedule of Events</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="w-16 text-yellow-600 font-semibold">1:30 PM</div>
+              <div>Guest arrival and seating</div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-16 text-yellow-600 font-semibold">2:00 PM</div>
+              <div>Wedding ceremony begins</div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-16 text-yellow-600 font-semibold">2:30 PM</div>
+              <div>Ceremony concludes</div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-16 text-yellow-600 font-semibold">3:00 PM</div>
+              <div>Cocktail hour and photos</div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="w-16 text-yellow-600 font-semibold">5:00 PM</div>
+              <div>Reception begins</div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-16 text-yellow-600 font-semibold">6:00 PM</div>
+              <div>Dinner service</div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-16 text-yellow-600 font-semibold">8:00 PM</div>
+              <div>Dancing and celebration</div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-16 text-yellow-600 font-semibold">11:00 PM</div>
+              <div>Last dance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section id="gallery" class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+          Photo Gallery
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Take a look at our journey together through these precious moments we've shared.
+        </p>
+      </div>
+      
+      <div class="fade-in">
+        <PhotoGallery client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP Section -->
+  <section id="rsvp" class="section-padding bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+          RSVP
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          We can't wait to celebrate with you! Please let us know if you'll be joining us for our special day.
+        </p>
+      </div>
+      
+      <div class="fade-in">
+        <RSVPForm client:load />
+      </div>
+    </div>
+  </section>
+
+  <!-- Registry & Gifts Section -->
+  <section id="registry" class="section-padding bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+          Registry & Gifts
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Your presence is the greatest gift of all. However, if you wish to honor us with a gift, here are some options.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 fade-in">
+        <div class="bg-gray-50 p-8 rounded-lg text-center">
+          <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">Monetary Gifts</h3>
+          <p class="text-gray-600 mb-6">
+            If you prefer to give a monetary gift, we've set up a simple way for you to contribute to our future together.
+          </p>
+          <div class="space-y-4">
+            <div class="p-4 bg-white rounded-lg border">
+              <h4 class="font-semibold text-gray-800 mb-2">Bank Transfer</h4>
+              <p class="text-sm text-gray-600">
+                Bank: First National Bank<br>
+                Account: John & Jane Wedding<br>
+                Account Number: 1234567890<br>
+                Routing: 987654321
+              </p>
+            </div>
+            <div class="p-4 bg-white rounded-lg border">
+              <h4 class="font-semibold text-gray-800 mb-2">Digital Payment</h4>
+              <div class="flex justify-center space-x-4 mt-2">
+                <button class="btn-secondary text-sm px-4 py-2">Venmo</button>
+                <button class="btn-secondary text-sm px-4 py-2">PayPal</button>
+                <button class="btn-secondary text-sm px-4 py-2">Cash App</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gray-50 p-8 rounded-lg text-center">
+          <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">Wedding Registry</h3>
+          <p class="text-gray-600 mb-6">
+            We've created registries at some of our favorite stores to help us start our new life together.
+          </p>
+          <div class="space-y-4">
+            <a href="#" class="block w-full btn-primary py-3 text-center">
+              View Amazon Registry
+            </a>
+            <a href="#" class="block w-full btn-secondary py-3 text-center">
+              View Target Registry
+            </a>
+            <a href="#" class="block w-full btn-secondary py-3 text-center">
+              View Crate & Barrel Registry
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center fade-in">
+        <div class="bg-yellow-50 p-8 rounded-lg border border-yellow-200">
+          <h3 class="text-xl font-semibold text-gray-800 mb-4">Honeymoon Fund</h3>
+          <p class="text-gray-600 mb-6">
+            We're planning an amazing honeymoon adventure! If you'd like to contribute to our travel fund, 
+            we've set up a special honeymoon registry where you can help us create unforgettable memories.
+          </p>
+          <button class="btn-primary">
+            Contribute to Honeymoon Fund
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Here are answers to some common questions about our wedding day.
+        </p>
+      </div>
+      
+      <div class="space-y-6 fade-in">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">What should I wear?</h3>
+          <p class="text-gray-600">
+            We've requested formal attire for our wedding. For men, we suggest a suit or tuxedo. For women, 
+            cocktail dresses or formal gowns are perfect. Please avoid wearing white or ivory.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Will there be parking available?</h3>
+          <p class="text-gray-600">
+            Yes! Both venues have ample parking available. Valet service will be provided at the reception venue.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Can I bring a plus-one?</h3>
+          <p class="text-gray-600">
+            Plus-ones are welcome for married couples and those in long-term relationships. 
+            Please indicate the number of guests in your RSVP.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Will the ceremony be outdoors?</h3>
+          <p class="text-gray-600">
+            Our ceremony will be held inside Sacred Heart Church, so weather won't be a concern. 
+            The reception will be indoors as well.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Are children welcome?</h3>
+          <p class="text-gray-600">
+            We love children, but we've decided to have an adults-only celebration. 
+            We hope you understand and can arrange for a babysitter.
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">What if I have dietary restrictions?</h3>
+          <p class="text-gray-600">
+            Please let us know about any dietary restrictions or allergies in your RSVP. 
+            We'll work with the caterer to ensure everyone has delicious options.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-padding bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="fade-in">
+        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+          Get in Touch
+        </h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          Have questions about our wedding? Need help with directions or accommodations? 
+          Don't hesitate to reach out to us.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact the Bride</h3>
+            <p class="text-gray-600 mb-2">Jane Smith</p>
+            <p class="text-gray-600 mb-2">
+              <a href="mailto:jane@example.com" class="text-yellow-600 hover:text-yellow-700">jane@example.com</a>
+            </p>
+            <p class="text-gray-600">
+              <a href="tel:+1234567890" class="text-yellow-600 hover:text-yellow-700">(123) 456-7890</a>
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact the Groom</h3>
+            <p class="text-gray-600 mb-2">John Doe</p>
+            <p class="text-gray-600 mb-2">
+              <a href="mailto:john@example.com" class="text-yellow-600 hover:text-yellow-700">john@example.com</a>
+            </p>
+            <p class="text-gray-600">
+              <a href="tel:+1234567890" class="text-yellow-600 hover:text-yellow-700">(123) 456-7890</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-script font-bold mb-4">John & Jane</h3>
+      <p class="text-gray-400 mb-6">June 15, 2025</p>
+      <p class="text-gray-400">
+        Can't wait to celebrate with you!
+      </p>
+    </div>
+  </footer>
 </Layout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://john-and-jane-wedding.com/sitemap-index.xml
