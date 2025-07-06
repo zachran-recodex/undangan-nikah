@@ -11,21 +11,27 @@ const weddingDate = new Date('2025-06-15T14:00:00');
   <!-- Hero Section -->
   <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
     <div class="absolute inset-0 hero-gradient"></div>
-    <div class="absolute inset-0 bg-black/20"></div>
     
-    <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-      <div class="fade-in">
-        <h1 class="text-5xl md:text-7xl font-script font-bold mb-6">
+    <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+      <div class="fade-in floating">
+        <div class="mb-8">
+          <svg class="w-16 h-16 mx-auto mb-6 text-white opacity-80" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L13.09 8.26L21 9L13.09 9.74L12 16L10.91 9.74L3 9L10.91 8.26L12 2Z"/>
+          </svg>
+        </div>
+        <h1 class="text-6xl md:text-8xl font-script font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
           John & Jane
         </h1>
-        <p class="text-xl md:text-2xl mb-8 font-light">
+        <div class="w-32 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6"></div>
+        <p class="text-2xl md:text-3xl mb-8 font-serif font-light tracking-wide">
           are getting married
         </p>
-        <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
-        <p class="text-lg md:text-xl mb-12">
-          Sunday, June 15, 2025 • 2:00 PM<br>
-          Sacred Heart Church
-        </p>
+        <div class="glass-effect inline-block px-8 py-4 rounded-full mb-12">
+          <p class="text-lg md:text-xl font-medium">
+            Sunday, June 15, 2025 • 2:00 PM<br>
+            <span class="text-yellow-100">Sacred Heart Church</span>
+          </p>
+        </div>
       </div>
       
       <div class="fade-in mb-12">
@@ -33,56 +39,93 @@ const weddingDate = new Date('2025-06-15T14:00:00');
       </div>
       
       <div class="fade-in">
-        <a href="#rsvp" class="btn-primary text-lg px-10 py-4 inline-block">
+        <a href="#rsvp" class="btn-primary inline-block">
           RSVP Now
         </a>
+        <p class="text-sm mt-4 text-yellow-100 font-light">
+          We can't wait to celebrate with you!
+        </p>
       </div>
     </div>
     
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
+      <div class="glass-effect p-3 rounded-full">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
     </div>
   </section>
 
   <!-- Our Story Section -->
-  <section id="story" class="section-padding bg-white">
+  <section id="story" class="section-padding" style="background: linear-gradient(135deg, #fefbf7 0%, #ffffff 100%);">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+      <div class="text-center mb-20 fade-in">
+        <div class="mb-6">
+          <svg class="w-12 h-12 mx-auto text-yellow-600 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+          </svg>
+        </div>
+        <h2 class="text-5xl md:text-6xl font-script font-bold text-gray-800 mb-6">
           Our Love Story
         </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto font-serif">
           Every love story is beautiful, but ours is our favorite. Here's how it all began.
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-16 fade-in">
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-4">How We Met</h3>
-          <p class="text-gray-600 leading-relaxed">
+      <div class="grid md:grid-cols-2 gap-16 items-center mb-20 slide-in-left">
+        <div class="elegant-card p-8">
+          <div class="mb-6">
+            <svg class="w-8 h-8 text-yellow-600 mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.5,4L19.66,8.35L24,9.5L19.66,10.65L18.5,15L17.34,10.65L13,9.5L17.34,8.35L18.5,4M6.5,10L7.66,14.35L12,15.5L7.66,16.65L6.5,21L5.34,16.65L1,15.5L5.34,14.35L6.5,10Z"/>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-serif font-semibold text-gray-800 mb-6">How We Met</h3>
+          <p class="text-gray-600 leading-relaxed text-lg">
             It was a rainy Tuesday in September 2020 when John and Jane first crossed paths at the local coffee shop. 
             What started as a chance encounter over spilled coffee turned into hours of conversation and an instant connection. 
             Little did they know that this moment would change their lives forever.
           </p>
         </div>
-        <div class="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
-          <span class="text-gray-500">Photo placeholder</span>
+        <div class="relative overflow-hidden rounded-2xl shadow-2xl card-hover" style="height: 400px;">
+          <div class="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-600"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white">
+              <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+              </svg>
+              <p class="font-serif text-lg">Coffee Shop Moment</p>
+            </div>
+          </div>
         </div>
       </div>
       
-      <div class="grid md:grid-cols-2 gap-12 items-center fade-in">
-        <div class="md:order-2">
-          <h3 class="text-2xl font-semibold text-gray-800 mb-4">The Proposal</h3>
-          <p class="text-gray-600 leading-relaxed">
+      <div class="grid md:grid-cols-2 gap-16 items-center mb-20 slide-in-right">
+        <div class="relative overflow-hidden rounded-2xl shadow-2xl card-hover md:order-1" style="height: 400px;">
+          <div class="absolute inset-0 bg-gradient-to-br from-rose-400 to-pink-500"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white">
+              <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+              </svg>
+              <p class="font-serif text-lg">Beach Proposal</p>
+            </div>
+          </div>
+        </div>
+        <div class="elegant-card p-8 md:order-2">
+          <div class="mb-6">
+            <svg class="w-8 h-8 text-yellow-600 mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-serif font-semibold text-gray-800 mb-6">The Proposal</h3>
+          <p class="text-gray-600 leading-relaxed text-lg">
             After four wonderful years together, John knew Jane was the one. On a beautiful sunset evening at their favorite 
             beach, surrounded by the sound of waves and the golden light of dusk, he got down on one knee and asked the 
             most important question of his life. Of course, she said yes!
           </p>
-        </div>
-        <div class="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
-          <span class="text-gray-500">Photo placeholder</span>
         </div>
       </div>
       
@@ -129,106 +172,157 @@ const weddingDate = new Date('2025-06-15T14:00:00');
   </section>
 
   <!-- Event Details Section -->
-  <section id="details" class="section-padding bg-gray-50">
+  <section id="details" class="section-padding" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl md:text-5xl font-script font-bold text-gray-800 mb-4">
+      <div class="text-center mb-20 fade-in">
+        <div class="mb-6">
+          <svg class="w-12 h-12 mx-auto text-yellow-600 opacity-80" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9,11H7V9H9V11M13,11H11V9H13V11M17,11H15V9H17V11M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,19H5V8H19V19Z"/>
+          </svg>
+        </div>
+        <h2 class="text-5xl md:text-6xl font-script font-bold text-gray-800 mb-6">
           Wedding Details
         </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto font-serif">
           All the important information you need to celebrate with us.
         </p>
       </div>
       
-      <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
-          <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <div class="elegant-card p-10 fade-in card-hover">
+          <div class="text-center mb-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Ceremony</h3>
+            <h3 class="text-3xl font-serif font-semibold text-gray-800 mb-2">Ceremony</h3>
+            <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto"></div>
           </div>
-          <div class="space-y-4">
-            <div>
-              <h4 class="font-semibold text-gray-800">Date & Time</h4>
-              <p class="text-gray-600">Sunday, June 15, 2025 at 2:00 PM</p>
+          <div class="space-y-6">
+            <div class="border-l-4 border-yellow-600 pl-6">
+              <h4 class="font-semibold text-gray-800 text-lg mb-2">Date & Time</h4>
+              <p class="text-gray-600 text-lg">Sunday, June 15, 2025 at 2:00 PM</p>
             </div>
-            <div>
-              <h4 class="font-semibold text-gray-800">Venue</h4>
-              <p class="text-gray-600">Sacred Heart Church<br>123 Main Street<br>Anytown, ST 12345</p>
+            <div class="border-l-4 border-yellow-600 pl-6">
+              <h4 class="font-semibold text-gray-800 text-lg mb-2">Venue</h4>
+              <p class="text-gray-600 text-lg">Sacred Heart Church<br>123 Main Street<br>Anytown, ST 12345</p>
             </div>
-            <div>
-              <h4 class="font-semibold text-gray-800">Dress Code</h4>
-              <p class="text-gray-600">Formal attire requested</p>
+            <div class="border-l-4 border-yellow-600 pl-6">
+              <h4 class="font-semibold text-gray-800 text-lg mb-2">Dress Code</h4>
+              <p class="text-gray-600 text-lg">Formal attire requested</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
-          <div class="text-center mb-6">
-            <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="elegant-card p-10 fade-in card-hover">
+          <div class="text-center mb-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
               </svg>
             </div>
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Reception</h3>
+            <h3 class="text-3xl font-serif font-semibold text-gray-800 mb-2">Reception</h3>
+            <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-pink-500 to-transparent mx-auto"></div>
           </div>
-          <div class="space-y-4">
-            <div>
-              <h4 class="font-semibold text-gray-800">Date & Time</h4>
-              <p class="text-gray-600">Sunday, June 15, 2025 at 5:00 PM</p>
+          <div class="space-y-6">
+            <div class="border-l-4 border-pink-500 pl-6">
+              <h4 class="font-semibold text-gray-800 text-lg mb-2">Date & Time</h4>
+              <p class="text-gray-600 text-lg">Sunday, June 15, 2025 at 5:00 PM</p>
             </div>
-            <div>
-              <h4 class="font-semibold text-gray-800">Venue</h4>
-              <p class="text-gray-600">Grand Ballroom Hotel<br>456 Oak Avenue<br>Anytown, ST 12345</p>
+            <div class="border-l-4 border-pink-500 pl-6">
+              <h4 class="font-semibold text-gray-800 text-lg mb-2">Venue</h4>
+              <p class="text-gray-600 text-lg">Grand Ballroom Hotel<br>456 Oak Avenue<br>Anytown, ST 12345</p>
             </div>
-            <div>
-              <h4 class="font-semibold text-gray-800">Dinner</h4>
-              <p class="text-gray-600">Plated dinner will be served</p>
+            <div class="border-l-4 border-pink-500 pl-6">
+              <h4 class="font-semibold text-gray-800 text-lg mb-2">Dinner</h4>
+              <p class="text-gray-600 text-lg">Plated dinner will be served</p>
             </div>
           </div>
         </div>
       </div>
       
-      <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Schedule of Events</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-4">
-            <div class="flex items-center">
-              <div class="w-16 text-yellow-600 font-semibold">1:30 PM</div>
-              <div>Guest arrival and seating</div>
+      <div class="elegant-card p-12 fade-in">
+        <div class="text-center mb-12">
+          <h3 class="text-4xl font-serif font-semibold text-gray-800 mb-4">Schedule of Events</h3>
+          <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="space-y-6">
+            <div class="flex items-start space-x-6 p-4 rounded-lg hover:bg-yellow-50 transition-colors">
+              <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                1:30
+              </div>
+              <div class="pt-2">
+                <h4 class="font-semibold text-gray-800 text-lg">Guest Arrival</h4>
+                <p class="text-gray-600">Welcome and seating</p>
+              </div>
             </div>
-            <div class="flex items-center">
-              <div class="w-16 text-yellow-600 font-semibold">2:00 PM</div>
-              <div>Wedding ceremony begins</div>
+            <div class="flex items-start space-x-6 p-4 rounded-lg hover:bg-yellow-50 transition-colors">
+              <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                2:00
+              </div>
+              <div class="pt-2">
+                <h4 class="font-semibold text-gray-800 text-lg">Ceremony Begins</h4>
+                <p class="text-gray-600">Exchange of vows</p>
+              </div>
             </div>
-            <div class="flex items-center">
-              <div class="w-16 text-yellow-600 font-semibold">2:30 PM</div>
-              <div>Ceremony concludes</div>
+            <div class="flex items-start space-x-6 p-4 rounded-lg hover:bg-yellow-50 transition-colors">
+              <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                2:30
+              </div>
+              <div class="pt-2">
+                <h4 class="font-semibold text-gray-800 text-lg">Ceremony Ends</h4>
+                <p class="text-gray-600">Recessional and congratulations</p>
+              </div>
             </div>
-            <div class="flex items-center">
-              <div class="w-16 text-yellow-600 font-semibold">3:00 PM</div>
-              <div>Cocktail hour and photos</div>
+            <div class="flex items-start space-x-6 p-4 rounded-lg hover:bg-yellow-50 transition-colors">
+              <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                3:00
+              </div>
+              <div class="pt-2">
+                <h4 class="font-semibold text-gray-800 text-lg">Cocktail Hour</h4>
+                <p class="text-gray-600">Photos and refreshments</p>
+              </div>
             </div>
           </div>
-          <div class="space-y-4">
-            <div class="flex items-center">
-              <div class="w-16 text-yellow-600 font-semibold">5:00 PM</div>
-              <div>Reception begins</div>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-6 p-4 rounded-lg hover:bg-pink-50 transition-colors">
+              <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                5:00
+              </div>
+              <div class="pt-2">
+                <h4 class="font-semibold text-gray-800 text-lg">Reception Begins</h4>
+                <p class="text-gray-600">Grand entrance</p>
+              </div>
             </div>
-            <div class="flex items-center">
-              <div class="w-16 text-yellow-600 font-semibold">6:00 PM</div>
-              <div>Dinner service</div>
+            <div class="flex items-start space-x-6 p-4 rounded-lg hover:bg-pink-50 transition-colors">
+              <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                6:00
+              </div>
+              <div class="pt-2">
+                <h4 class="font-semibold text-gray-800 text-lg">Dinner Service</h4>
+                <p class="text-gray-600">Three-course meal</p>
+              </div>
             </div>
-            <div class="flex items-center">
-              <div class="w-16 text-yellow-600 font-semibold">8:00 PM</div>
-              <div>Dancing and celebration</div>
+            <div class="flex items-start space-x-6 p-4 rounded-lg hover:bg-pink-50 transition-colors">
+              <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                8:00
+              </div>
+              <div class="pt-2">
+                <h4 class="font-semibold text-gray-800 text-lg">Dancing</h4>
+                <p class="text-gray-600">First dance and celebration</p>
+              </div>
             </div>
-            <div class="flex items-center">
-              <div class="w-16 text-yellow-600 font-semibold">11:00 PM</div>
-              <div>Last dance</div>
+            <div class="flex items-start space-x-6 p-4 rounded-lg hover:bg-pink-50 transition-colors">
+              <div class="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                11:00
+              </div>
+              <div class="pt-2">
+                <h4 class="font-semibold text-gray-800 text-lg">Last Dance</h4>
+                <p class="text-gray-600">Final celebration</p>
+              </div>
             </div>
           </div>
         </div>
